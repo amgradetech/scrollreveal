@@ -127,6 +127,26 @@
   }
 
   /**
+   * Clear up all event listeners
+   * -------------
+   * eg You're building SPA and want to clear up listeners on page change
+   * https://github.com/jlmakes/scrollreveal/issues/227
+   */
+  ScrollReveal.prototype.clearAllEventListeners = function() {
+    if ( sr.initialized ){
+      for ( var i = 0; i < sr.store.containers.length; i++ ){
+        sr.store.containers[ i ].removeEventListener( 'scroll', _handler );
+        sr.store.containers[ i ].removeEventListener( 'resize', _handler );
+      }
+      window.removeEventListener( 'scroll', _handler );
+      window.removeEventListener( 'resize', _handler );
+      sr.initialized = false;
+    }
+
+    return sr;
+  }
+
+  /**
    * Check if client supports CSS Transform and CSS Transition.
    * @return {boolean}
    */
