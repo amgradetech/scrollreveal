@@ -372,6 +372,13 @@ _Continuing our example from 4.2._
 </html>
 ```
 
+#### 4.4. Clear up all events
+Whenether you need to clear up all eventListeners you can call this public method
+
+```
+sr.clearAllEventListeners()
+```
+  
 ## 5. Appendix
 
 Open source under the [MIT License](https://github.com/jlmakes/scrollreveal.js/blob/master/LICENSE.md). ©2014–2017 Julian Lloyd.
