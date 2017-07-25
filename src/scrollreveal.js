@@ -525,7 +525,7 @@
       sequence = sr.sequences[sequenceId]
       active = false
 
-      // For each sequenced elemenet, let’s check visibility and if
+      // For each sequenced element, let’s check visibility and if
       // any are visible, set it’s sequence to active.
       for (var i = 0; i < sequence.elemIds.length; i++) {
         elemId = sequence.elemIds[i]
