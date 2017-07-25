@@ -523,9 +523,9 @@
     // Loop through all sequences
     sr.tools.forOwn(sr.sequences, function (sequenceId) {
       sequence = sr.sequences[sequenceId]
-      active = false
+      active = sequence.active || false
 
-      // For each sequenced elemenet, let’s check visibility and if
+      // For each sequenced element, let’s check visibility and if
       // any are visible, set it’s sequence to active.
       for (var i = 0; i < sequence.elemIds.length; i++) {
         elemId = sequence.elemIds[i]
@@ -550,7 +550,7 @@
       elem = sr.store.elements[elemId]
       delayed = _shouldUseDelay(elem)
 
-      // Let’s see if we should revealand if so,
+      // Let’s see if we should reveal and if so,
       // trigger the `beforeReveal` callback and
       // determine whether or not to use delay.
       if (_shouldReveal(elem)) {
